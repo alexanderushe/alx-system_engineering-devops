@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# SSH Client configuration settings to connect without password and use ~/.ssh/school to as private key
+
+Host web-01
+	Hostname 100.25.196.91
+	User ubuntu
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
