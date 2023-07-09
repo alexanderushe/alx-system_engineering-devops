@@ -1,16 +1,13 @@
-# Setting up my client config file to ensure connection to server without server and use ~/.ssh/school as key
-include stdlib
+# Configuring the SSH client using puppet 
 
-file_line { 'Turn off passwd auth':
+file_line {
+  'passAuth':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => '    PasswordAuthentication no',
-  replace => true,
-}
-
-file_line { 'Delare identity file':
+  line   => '   PasswordAuthentication no'
+  ;
+  'keyLocation':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
-  line   => '     IdentityFile ~/.ssh/school',
-  replace => true,
+  line   => '   IdentityFile ~/.ssh/school'
 }
