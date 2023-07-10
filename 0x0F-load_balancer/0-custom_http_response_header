@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
+<<<<<<< Updated upstream
+=======
 # Configuring web-02 to be identical to web-01
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> 81c52affe7b1414d68c96a5b22d56f7ca872e1bc
 # Installs Nginx with the following configurations:
 #+    Listens on port 80.
 #+    Returns a page containing "Hello World" when queried
