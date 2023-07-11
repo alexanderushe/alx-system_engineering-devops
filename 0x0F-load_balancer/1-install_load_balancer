@@ -10,7 +10,7 @@ frontend haproxy_balancer
     
 backend webservers
     balance roundrobin
-    server 195722-web-01 54.144.46.125:80 check
+    server 195722-web-01 18.234.169.88:80 check
     server 195722-web-02 52.23.213.27:80 check
 "
 # Update packages
