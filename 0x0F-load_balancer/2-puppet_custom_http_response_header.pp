@@ -1,6 +1,36 @@
-# automate task of creating a custom HTTP header response with puppet
+# Creates a custom HTTP header
+#using puppet
+exec { 'apt-get-update':
+  command => '/usr/bin/apt-get update',
+}
 
-exec { 'create custom':
-  command  => 'INDEX_COPY="Holberton School for the win!" && ERROR_COPY="Ceci n\'est pas une page - 404" && sudo apt-get -y update && sudo apt-get -y install nginx && echo "$INDEX_COPY" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null && echo "$ERROR_COPY" | sudo tee /var/www/html/custom_404.html > /dev/null && sudo sed -i \'/^\sserver_name.*/a \        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\' /etc/nginx/sites-available/default && sudo sed -i \'/^\slocation.*/i \        error_page 404 /custom_404.html;\' /etc/nginx/sites-available/default && sudo sed -i \'/^\slocation.*/i \        add_header X-Served-By $hostname;\' /etc/nginx/sites-available/default && sudo service nginx start',
-  provider => shell,
+package { 'nginx':
+  ensure  => installed,
+  require => Exec['apt-get-update'],
+}
+
+file_line { 'a':
+  ensure  => 'present',
+  path    => '/etc/nginx/sites-available/default',
+  after   => 'listen 80 default_server;',
+  line    => 'rewrite ^/redirect_me https://twitter.com/Jbusmoove permanent;',
+  require => Package['nginx'],
+}
+
+file_line { 'b':
+  ensure  => 'present',
+  path    => '/etc/nginx/sites-available/default',
+  after   => 'listen 80 default_server;',
+  line    => 'add_header X-Served-By $hostname;',
+  require => Package['nginx'],
+}
+
+file { '/var/www/html/index.html':
+  content => 'School',
+  require => Package['nginx'],
+}
+
+service { 'nginx':
+  ensure  => running,
+  require => Package['nginx'],
 }
