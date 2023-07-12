@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# makes nginx installation to listen on port 80
-apt-get update
-apt-get - install curl
-rm /etc/nginx/sites-available/*~
-sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+# configures server for nginx to be listening to port 80
+sudo sed -i "s/sites-enabled/sites-available/" /etc/nginx/nginx.conf
 sudo service nginx restart
