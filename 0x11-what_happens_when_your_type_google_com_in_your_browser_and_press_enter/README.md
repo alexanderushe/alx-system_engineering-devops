@@ -1,4 +1,4 @@
-### 0x11. What happens when you type holbertonschool.com in your browser and press Enter  
+### 0x11. What happens when you type google.com in your browser and press Enter  
 
 ---
 ![what_happens_when](what_happens_when.png)
@@ -10,7 +10,7 @@
 
 This question is a good test of whether you understand DNS. Many software engineering candidates struggle with this concept, so if you do well on this question, you are already way ahead of the curve. If you take this project seriously and write an excellent article, it may be something that will grab the attention of future employers.
 
-Write a blog post explaining what happens when you type https://www.holbertonschool.com in your browser and press Enter.
+Write a blog post explaining what happens when you type https://www.google.com in your browser and press Enter.
 
 Requirements, your post must cover:
 
@@ -28,7 +28,7 @@ Requirements, your post must cover:
 ###### 1. Everything's better with a pretty diagram  
 
 
-> Add a schema to your blog post illustrating the flow of the request created when you type https://www.holbertonschool.com in your browser and press Enter.
+> Add a schema to your blog post illustrating the flow of the request created when you type https://www.google.com in your browser and press Enter.
 
 The diagram should show:
 
