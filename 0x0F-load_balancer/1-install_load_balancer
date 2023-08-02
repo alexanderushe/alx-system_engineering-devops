@@ -14,4 +14,17 @@ sudo sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
 # include roundrobin and two servers
 sudo sed -i "\$a $CONFGF" /etc/haproxy/haproxy.cfg
 
+# Configure HAProxy
+cat << EOF | sudo tee /etc/haproxy/haproxy.cfg
+frontend app_frontend
+    bind 0.0.0.0:80
+    mode http
+    default_backend app_servers
+
+backend app_servers
+    balance roundrobin
+    mode http
+    server 195722-web-01 18.234.169.88:80 check
+    server 195722-web-02 100.26.253.133:80 check
+EOF
 sudo service haproxy start
