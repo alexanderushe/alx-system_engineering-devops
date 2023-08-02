@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Install and configure HAProxy load balancer to 195722-lb-01
-# sends traffic to web-01 and web-02
+# sends traffic to web-01 and web-02.
 
 
 CONFGF="\\\nlisten appname 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 195722-web-01 18.234.169.88 check\n\tserver 195722-web-02 100.26.253.133 check\n"
