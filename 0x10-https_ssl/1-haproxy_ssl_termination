@@ -38,15 +38,12 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend www-http
-    bind   *:80
-    reqadd X-Forwarded-Proto:\ http
-    default_backend my_backend
+        bind *:81
+        default_backend www-backend
 
-frontend my_frontend
+frontend www-https
         bind *:443 ssl crt /etc/ssl/ushe.tech/ushe.tech.pem
-        acl letsencrypt-acl path_beg /.well-known/acme-challenge/
-        use_backend letsencrypt-backend if letsencrypt-acl
-        default_backend my_backend
+        default_backend www-backend
 
 backend www-backend
     balance  roundrobin
@@ -58,4 +55,9 @@ backend www-backend
 backend letsencrypt-backend
     server letsencrypt 127.0.0.1:8888
 
-backend my_backend
+#listen appname 0.0.0.0:80
+#       mode http
+#       balance roundrobin
+#       option httpclose
+#       option forwardfor
+#       195722-web-01 18.234.169.88:80 check
