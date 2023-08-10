@@ -1,0 +1,19 @@
+Get:1 http://security.ubuntu.com/ubuntu xenial-security InRelease [99.8 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:3 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [99.8 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [97.4 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [2,052 kB]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [985 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [2,560 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1,545 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [25.0 kB]
+Fetched 7,464 kB in 13s (562 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (7.47.0-1ubuntu2.19).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+rm: cannot remove '/etc/nginx/sites-available/*~': No such file or directory
+sed: can't read /etc/nginx/sites-enabled/default: No such file or directory
+nginx: unrecognized service
