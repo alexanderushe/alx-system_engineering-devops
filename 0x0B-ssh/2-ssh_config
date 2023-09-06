@@ -2,7 +2,7 @@
 # SSH Client configuration settings to connect without password and use ~/.ssh/school to as private key
 
 Host web-01
-	Hostname 100.25.125.223
+	Hostname 100.25.162.4
 	User ubuntu
 	PasswordAuthentication no
 	IdentityFile ~/.ssh/school
