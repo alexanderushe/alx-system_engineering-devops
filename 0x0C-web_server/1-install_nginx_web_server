@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
-# install nginx and adjust default homepage
+
+# Update package list and install Nginx
 apt-get -y update
 apt-get -y install nginx
-sed -i '21s/^.*listen 80;/    listen 80;/' /etc/nginx/sites-enabled/default
+
+# Find the line containing 'listen 80;' and replace it
+sed -i 's/^.*listen 80;/    listen 80;/' /etc/nginx/sites-enabled/default
+
+# Allow traffic on port 80 through the firewall (ufw)
 ufw allow 'Nginx HTTP'
-echo Hello World! > /var/www/html/index.nginx-debian.html
+
+# Replace the default index page with "Hello World!"
+echo "<html><body>Hello World!</body></html>" > /var/www/html/index.nginx-debian.html
+
+# Start the Nginx service
 service nginx start
