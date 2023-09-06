@@ -11,7 +11,7 @@ sed -i 's/^.*listen 80;/    listen 80;/' /etc/nginx/sites-enabled/default
 ufw allow 'Nginx HTTP'
 
 # Replace the default index page with "Hello World!"
-echo "<html><body>Hello World!</body></html>" > /var/www/html/index.nginx-debian.html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
 # Start the Nginx service
 service nginx start
